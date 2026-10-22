@@ -1,0 +1,13 @@
+Projects page setup
+
+1. Put projects.html beside index.html in the GitHub Pages publishing folder.
+2. Add this link to index.html, for example near the existing Projects heading:
+   <a href="projects.html">View projects</a>
+3. Open 392GP.aprx in ArcGIS Pro. Confirm the layers load and export your map as a PNG. Create an assets folder beside projects.html and save the image as assets/392gp-map.png.
+4. In projects.html, replace the preview div with the commented figure. Write accurate alt text and a caption for your actual map.
+5. Replace every bracketed writing prompt with your own first-draft words. Rename the project if 392GP is only a working filename.
+6. Add additional projects by copying the article and assigning unique heading IDs.
+
+The APRX references 392GP.gdb for its raster and an external CSV for the XY layer. The APRX alone is not a self-contained data package or browser map. This page therefore does not offer an incomplete APRX download or display an invented map.
+
+Inspection confirmed project configuration only; no analysis results or raster values were verified. The page has native keyboard navigation, visible focus, responsive styling, a skip link, and no JavaScript dependencies. Browser rendering has not been visually tested.
