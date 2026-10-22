@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSTAT issue tracker</title>
+<link rel="stylesheet" href="https://js.arcgis.com/4.34/esri/themes/light/main.css">
+<style>html,body,#view{margin:0;width:100%;height:100%}#status{position:absolute;bottom:30px;left:12px;right:12px;padding:10px;background:#fff;color:#222;font:14px system-ui;z-index:5}#status[hidden]{display:none}</style>
+<script src="https://js.arcgis.com/4.34/"></script></head><body>
+<div id="view" role="region" aria-label="College Station infrastructure issue map"></div><div id="status" role="status">Loading map…</div>
+<script>
+require(["esri/WebMap","esri/views/MapView","esri/Basemap","esri/layers/TileLayer","esri/widgets/Home"],function(WebMap,MapView,Basemap,TileLayer,Home){
+var status=document.getElementById("status");
+var map=new WebMap({portalItem:{id:"1b53d05f4e4f43f2b44cfc86c2eeec87"}});
+map.load().then(function(){
+map.basemap=new Basemap({baseLayers:[new TileLayer({url:"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"})],title:"Streets"});
+var view=new MapView({container:"view",map:map,center:[-96.32,30.61],zoom:14});
+view.ui.add(new Home({view:view}),"top-left");
+view.when(function(){status.hidden=true;},showError);
+}).catch(showError);
+function showError(){status.textContent="The map could not load. Use the Open map in ArcGIS link below the map.";}
+});
+</script></body></html>
