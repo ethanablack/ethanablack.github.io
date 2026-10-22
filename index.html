@@ -28,6 +28,10 @@
   .map-link{display:inline-block;margin-top:1rem;}
   a{color:var(--accent);}
   footer{text-align:center;padding:1.5rem;color:#999;font-size:.9rem;}
+  .home-nav{display:flex;justify-content:center;gap:.5rem;margin-top:1.5rem;flex-wrap:wrap}
+  .home-nav a{display:inline-block;color:#fff;padding:.6rem 1.25rem;border:1px solid #ffffff80;border-radius:3px;text-decoration:none;font-weight:600}
+  .home-nav a:hover,.home-nav a[aria-current="page"]{background:#fff;color:#500000}
+  .home-nav a:focus-visible{outline:3px solid #fff;outline-offset:4px}
 </style>
 <link rel="stylesheet" href="aggie-theme.css?v=1">
 </head>
@@ -36,6 +40,10 @@
 <header>
   <h1>Ethan Ablack</h1>
   <p>GIS Undergrad at Texas A&amp;M | Spatial Analysis &amp; Esri Tools</p>
+  <nav class="home-nav" aria-label="Main navigation">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="projects.html">Projects</a>
+  </nav>
 </header>
 
 <section id="about">
